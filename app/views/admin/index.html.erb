@@ -1,0 +1,29 @@
+<div class='row'>
+  <div class='col-md-12'>
+    <h2>Credit Card Applications</h2>
+    <table id='app-listing'>
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Credit Limit</th>
+          <th>System Recommendation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @credit_cards.each do |cc| %>
+        <tr>
+          <td><%= cc.email %></td>
+          <td><%= cc.credit_limit %></td>
+          <td><%= cc.system_suggestion.capitalize %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('#app-listing').DataTable();
+  });
+</script>
